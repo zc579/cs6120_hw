@@ -1,0 +1,191 @@
+benchmark
+@pack(size: int, n1: int, n2: int, n3: int, n4: int, n5: int, n6: int, n7: int, n8: int, n9: int) : ptr<int> {
+    one: int = const 1;
+    i: int = const 0;
+    array: ptr<int> = alloc size;
+# Pack data into array manually. Cannot use loop because of the different var name.     
+    loc: ptr<int> = ptradd array i;
+    store loc n1;
+    i: int = add i one;
+    loc: ptr<int> = ptradd array i;
+    store loc n2;
+    i: int = add i one;        
+    loc: ptr<int> = ptradd array i;
+    store loc n3;
+    i: int = add i one;        
+    loc: ptr<int> = ptradd array i;
+    store loc n4;
+    i: int = add i one;        
+    loc: ptr<int> = ptradd array i;
+    store loc n5;
+    i: int = add i one;        
+    loc: ptr<int> = ptradd array i;
+    store loc n6;
+    i: int = add i one;        
+    loc: ptr<int> = ptradd array i;
+    store loc n7;
+    i: int = add i one;        
+    loc: ptr<int> = ptradd array i;
+    store loc n8;
+    i: int = add i one;        
+    loc: ptr<int> = ptradd array i;
+    store loc n9;
+    ret array;
+}
+
+@main() {
+# Pack the input elements into an array with a starting pointer
+    one: int = const 1;
+    zero: int = const 0;
+    size: int = const 9;
+    n1: int = const -2;
+    n2: int = const 1;
+    n3: int = const -3;
+    n4: int = const 4;
+    n5: int = const -1;
+    n6: int = const 2;
+    n7: int = const 1;
+    n8: int = const -5;
+    n9: int = const 4;
+    array: ptr<int> = call @pack size n1 n2 n3 n4 n5 n6 n7 n8 n9;
+    i: int = const 1;
+    i_min_one: int = sub i one;
+    loc: ptr<int> = ptradd array i_min_one;
+    max1: int = load loc;
+    max2: int = load loc;
+    sum: int = load loc;
+.loop:
+    cond: bool = lt i size;
+    br cond .body .out;
+.body:
+    loc:ptr<int> = ptradd array i;
+    num: int = load loc;
+    sum: int = add sum num;
+    cond1: bool = gt num sum;
+    br cond1 .yes1 .no1;
+.yes1:
+    max1: int = add zero num;
+    sum: int = add zero num;
+    jmp .done1;
+.no1:
+    max1: int = add zero sum;
+.done1:
+    cond2: bool = gt max1 max2;
+    br cond2 .yes2 .done2;
+.yes2:
+    max2: int = add zero max1;
+.done2:
+    i:int = add i one;
+    jmp .loop;
+.out:
+    print max2;
+    free array;
+}
+
+
+CFG
+import json 
+import sys
+from collections import OrderedDict
+
+TERMINATOR='jmp', 'br','ret'
+
+
+def form_blocks(body):
+    current_block=[]
+    for instr in body:
+        if 'op'in instr:
+            current_block.append(instr)
+            if instr['op'] in TERMINATOR: 
+                yield current_block
+                current_block=[]
+        else :
+            yield current_block
+            current_block=[instr]
+
+    yield current_block
+
+def block_map(blocks):
+    out =OrderedDict()
+    for block in blocks:
+        if "label" in block[0]:
+            name=block[0]['label']
+            block=block[1:]
+        else:
+            name='b{}'.format(len(out))
+        out[name]=block
+
+    return out
+
+def get_cfg(name2block):
+    #given name to block map,produce mapping to successor
+    out = {}
+    blocks_list = list(name2block.items())  # Convert to list for indexing
+    
+    for i, (name, block) in enumerate(blocks_list):
+            
+        last = block[-1]  # Get the last instruction
+        if last['op'] in ('jmp','br') :
+            succ = last['labels']
+        elif last['op']=='ret':
+            succ=[]
+        else:
+            if i ==len(name2block)-1:
+                succ=[]
+            else:
+                succ=[list(name2block.keys())[i+1]]
+        out[name]=succ
+    return out
+
+
+def mycfg():
+        prog = json.load(sys.stdin)  
+        for func in prog['functions']:
+            name2block = block_map(form_blocks(func['instrs']))
+            cfg=get_cfg(name2block)
+            print(cfg)
+
+
+
+if __name__ == '__main__':
+
+    try:
+        mycfg()
+    except BrokenPipeError:
+        # Explicitly close stdout to avoid the error message
+        try:
+            sys.stdout.close()
+        except:
+            pass
+        sys.exit(0)
+
+
+small function
+import json
+import sys
+
+def myfunc():
+    const_num=0
+    add_num=0
+    prog=json.load(sys.stdin)
+    #print(prog)
+
+    for func in prog['functions']:
+        #print(func['instrs'])
+
+        for instr in func['instrs']:
+            if instr['op'] == 'const':
+                const_num+=1
+            elif instr['op'] == 'add':
+                add_num+=1
+    print(const_num,add_num)
+
+
+
+
+if __name__ == "__main__":
+    try:
+        myfunc()
+    except BrokenPipeError:
+        sys.stderr.close()
+        sys.exit(0)
