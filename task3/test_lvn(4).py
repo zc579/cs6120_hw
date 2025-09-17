@@ -65,12 +65,21 @@ def lvn(block):
                     rhs.remove(instr["dest"])
 
         if "dest" in instr and "args" in instr and instr["op"] != "call":
-            val=Value(instr['op'],tuple(sorted(nums_arg)))
-            num=value2num.get(val)
+            if instr['op'] == 'id' and len(nums_arg) == 1:
+                var2num[instr['dest']] = nums_arg[0]
+                num2var[nums_arg[0]].append(instr['dest'])
+                continue
+            
+            if instr['op'] in ['add', 'mul']:
+                val = Value(instr['op'], tuple(sorted(nums_arg)))
+            else:
+                val = Value(instr['op'], tuple(nums_arg))
+            
+            num = value2num.get(val)
             if num is not None:
-                var2num[instr['dest']]=num
-                instr['op']='id'
-                instr['args']=[num2var[num][0]]
+                var2num[instr['dest']] = num
+                instr['op'] = 'id'
+                instr['args'] = [num2var[num][0]]
                 num2var[num].append(instr['dest'])
                 continue
 
@@ -89,7 +98,6 @@ def lvn(block):
                 value2num[val]=update_num
 
         index+=1
-
 def start(bril):
     for func in bril["functions"]:
         blocks = list(form_blocks(func["instrs"]))
