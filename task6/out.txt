@@ -1,0 +1,370 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "cond",
+          "type": "bool"
+        }
+      ],
+      "instrs": [
+        {
+          "label": "b1"
+        },
+        {
+          "dest": "cond.right.init",
+          "op": "undef",
+          "type": "bool"
+        },
+        {
+          "dest": "cond.left.init",
+          "op": "undef",
+          "type": "bool"
+        },
+        {
+          "dest": "cond.exit.init",
+          "op": "undef",
+          "type": "bool"
+        },
+        {
+          "dest": "cond.entry.init",
+          "op": "undef",
+          "type": "bool"
+        },
+        {
+          "dest": "a.right.1.init",
+          "op": "undef",
+          "type": "int"
+        },
+        {
+          "dest": "a.right.init",
+          "op": "undef",
+          "type": "int"
+        },
+        {
+          "dest": "a.left.1.init",
+          "op": "undef",
+          "type": "int"
+        },
+        {
+          "dest": "a.left.init",
+          "op": "undef",
+          "type": "int"
+        },
+        {
+          "dest": "a.exit.init",
+          "op": "undef",
+          "type": "int"
+        },
+        {
+          "dest": "a.entry.init",
+          "op": "undef",
+          "type": "int"
+        },
+        {
+          "dest": "a.0",
+          "op": "undef",
+          "type": "int"
+        },
+        {
+          "args": [
+            "cond.entry.init",
+            "cond"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.entry.init",
+            "a.0"
+          ],
+          "op": "set"
+        },
+        {
+          "labels": [
+            "entry"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "entry"
+        },
+        {
+          "dest": "a.entry.0",
+          "op": "get",
+          "type": "int"
+        },
+        {
+          "dest": "cond.entry.0",
+          "op": "get",
+          "type": "bool"
+        },
+        {
+          "dest": "a.entry.1.0",
+          "op": "const",
+          "type": "int",
+          "value": 47
+        },
+        {
+          "args": [
+            "cond.left.init",
+            "cond.entry.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.left.init",
+            "a.entry.1.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "cond.right.init",
+            "cond.entry.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.right.init",
+            "a.entry.1.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "cond.entry.0"
+          ],
+          "labels": [
+            "left",
+            "right"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "left"
+        },
+        {
+          "dest": "a.left.0",
+          "op": "get",
+          "type": "int"
+        },
+        {
+          "dest": "cond.left.0",
+          "op": "get",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "a.left.0",
+            "a.left.0"
+          ],
+          "dest": "a.left.1.0",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "cond.exit.init",
+            "cond.left.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.exit.init",
+            "a.left.1.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.left.1",
+            "a.left.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.left.1.1",
+            "a.left.1.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.right.1",
+            "a.right.init"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.right.1.1",
+            "a.right.1.init"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "cond.left.1",
+            "cond.left.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "cond.right.1",
+            "cond.right.init"
+          ],
+          "op": "set"
+        },
+        {
+          "labels": [
+            "exit"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "right"
+        },
+        {
+          "dest": "a.right.0",
+          "op": "get",
+          "type": "int"
+        },
+        {
+          "dest": "cond.right.0",
+          "op": "get",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "a.right.0",
+            "a.right.0"
+          ],
+          "dest": "a.right.1.0",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "cond.exit.init",
+            "cond.right.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.exit.init",
+            "a.right.1.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.left.1",
+            "a.left.init"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.left.1.1",
+            "a.left.1.init"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.right.1",
+            "a.right.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "a.right.1.1",
+            "a.right.1.0"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "cond.left.1",
+            "cond.left.init"
+          ],
+          "op": "set"
+        },
+        {
+          "args": [
+            "cond.right.1",
+            "cond.right.0"
+          ],
+          "op": "set"
+        },
+        {
+          "labels": [
+            "exit"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "exit"
+        },
+        {
+          "dest": "cond.right.1",
+          "op": "get",
+          "type": "bool"
+        },
+        {
+          "dest": "cond.left.1",
+          "op": "get",
+          "type": "bool"
+        },
+        {
+          "dest": "a.right.1.1",
+          "op": "get",
+          "type": "int"
+        },
+        {
+          "dest": "a.right.1",
+          "op": "get",
+          "type": "int"
+        },
+        {
+          "dest": "a.left.1.1",
+          "op": "get",
+          "type": "int"
+        },
+        {
+          "dest": "a.left.1",
+          "op": "get",
+          "type": "int"
+        },
+        {
+          "dest": "a.exit.0",
+          "op": "get",
+          "type": "int"
+        },
+        {
+          "dest": "cond.exit.0",
+          "op": "get",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "a.exit.0"
+          ],
+          "op": "print"
+        },
+        {
+          "op": "ret"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}
