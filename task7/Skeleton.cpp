@@ -35,14 +35,12 @@ struct InsertLogOpPass : public PassInfoMixin<InsertLogOpPass> {
         for (auto &I : B) {
           if (auto *BO = dyn_cast<BinaryOperator>(&I)) {
             unsigned op = BO->getOpcode();
-            // filter only + - * / (sdiv/udiv)
             if (op == Instruction::Add ||
                 op == Instruction::Sub ||
                 op == Instruction::Mul ||
                 op == Instruction::SDiv ||
                 op == Instruction::UDiv) {
 
-              // only support i32
               if (BO->getType()->isIntegerTy(32))
                 Ops.push_back(BO);
             }
@@ -56,7 +54,7 @@ struct InsertLogOpPass : public PassInfoMixin<InsertLogOpPass> {
           Value *R = BO->getOperand(1);
           Value *Res = BO;
 
-          int Code = -1;  // default
+          int Code = -1;  
 
         auto Op = BO->getOpcode();
 
@@ -81,7 +79,7 @@ struct InsertLogOpPass : public PassInfoMixin<InsertLogOpPass> {
   }
 };
 
-} // namespace
+} 
 
 extern "C" LLVM_ATTRIBUTE_WEAK PassPluginLibraryInfo
 llvmGetPassPluginInfo() {
