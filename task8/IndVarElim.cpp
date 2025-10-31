@@ -55,13 +55,11 @@ struct IndVarElimPass : public PassInfoMixin<IndVarElimPass> {
     const APInt &CVal = CC->getAPInt();
     if (CVal.isZero()) return None;
 
-    // 要求 K = A * C（整除）
     if (KVal.srem(CVal) != 0)
       return None;
 
     APInt AVal = KVal.sdiv(CVal);
 
-    // LLVM 14 支持 getConstant(APInt)
     const SCEV *A = SE.getConstant(AVal);
 
     // A*i + B == AR => B = Base - A*Start
@@ -71,7 +69,6 @@ struct IndVarElimPass : public PassInfoMixin<IndVarElimPass> {
     return std::make_pair(A, B);
   }
 
-  // 显式指定插入点，避免 LLVM 14 在选择插入点时触发崩溃
   static Value* expandAt(const SCEV *S, Type *Ty, Instruction *InsertBefore,
                          ScalarEvolution &SE) {
     const DataLayout &DL = InsertBefore->getModule()->getDataLayout();
@@ -82,10 +79,9 @@ struct IndVarElimPass : public PassInfoMixin<IndVarElimPass> {
   PreservedAnalyses run(Loop &L, LoopAnalysisManager &LAM,
                         LoopStandardAnalysisResults &AR, LPMUpdater &U) {
 
-    // LLVM 14 的 LoopStandardAnalysisResults 成员是“引用”，无需解引用
     ScalarEvolution &SE = AR.SE;
     DominatorTree   &DT = AR.DT;
-    (void)DT; // 暂未直接使用
+    (void)DT; 
     // LoopInfo &LI = AR.LI;
 
     BasicBlock *Header    = L.getHeader();
@@ -93,8 +89,7 @@ struct IndVarElimPass : public PassInfoMixin<IndVarElimPass> {
     BasicBlock *Latch     = L.getLoopLatch();
     if (!Header || !Preheader || !Latch)
       return PreservedAnalyses::all();
-
-    // 1) 找到主归纳变量
+      
     PHINode *IndPhi = nullptr;
     const SCEVAddRecExpr *IV = nullptr;
     for (PHINode &P : Header->phis()) {
@@ -109,14 +104,13 @@ struct IndVarElimPass : public PassInfoMixin<IndVarElimPass> {
 
     bool Changed = false;
 
-    // 2) 收集 loop 内可被改写成 A*i + B 的整型算术指令
     SmallVector<Instruction*, 16> Targets;
     SmallVector<std::pair<const SCEV*, const SCEV*>, 16> Plans;
 
     for (auto *BB : L.blocks()) {
       for (Instruction &I : *BB) {
         if (&I == IndPhi) continue;
-        if (I.mayReadOrWriteMemory()) continue; // 简化：只处理纯算术
+        if (I.mayReadOrWriteMemory()) continue; 
         if (!I.getType()->isIntegerTy()) continue;
 
         const SCEV *S = SE.getSCEV(&I);
@@ -130,12 +124,11 @@ struct IndVarElimPass : public PassInfoMixin<IndVarElimPass> {
     if (Targets.empty())
       return PreservedAnalyses::all();
 
-    // 3) 为每种 (A,B) 构建一个递推 r
     std::map<std::pair<const SCEV*, const SCEV*>, PHINode*> Built;
 
     IRBuilder<> HB(&*Header->getFirstInsertionPt());
     IRBuilder<> LB(Latch->getTerminator());
-    Instruction *PHInsert = Preheader->getTerminator(); // 显式插入点
+    Instruction *PHInsert = Preheader->getTerminator(); 
 
     SmallVector<Instruction*, 16> ToErase;
 
@@ -154,7 +147,7 @@ struct IndVarElimPass : public PassInfoMixin<IndVarElimPass> {
         const SCEV *BaseS  = SE.getAddExpr(AStart, B);
         Value *BaseV = expandAt(BaseS, ITy, PHInsert, SE);
 
-        // step = a*C  （preheader，尽量常量）
+        // step = a*C 
         const SCEV *StepS = SE.getMulExpr(A, IV->getStepRecurrence(SE));
         Value *StepV = expandAt(StepS, ITy, PHInsert, SE);
 
@@ -170,7 +163,6 @@ struct IndVarElimPass : public PassInfoMixin<IndVarElimPass> {
         R = It->second;
       }
 
-      // 用 r 替换 a*i+b 的使用（统一用 header 版本 r）
       I->replaceAllUsesWith(R);
       ToErase.push_back(I);
       Changed = true;
@@ -185,7 +177,6 @@ struct IndVarElimPass : public PassInfoMixin<IndVarElimPass> {
 
 } // end anonymous namespace
 
-// ===== 新 PM 插件注册（LLVM 14 可用）=====
 llvm::PassPluginLibraryInfo getIndVarElimPassPluginInfo() {
   return {LLVM_PLUGIN_API_VERSION, "IndVarElimPass", LLVM_VERSION_STRING,
           [](PassBuilder &PB) {
