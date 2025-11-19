@@ -1,0 +1,174 @@
+ziyang@Younger-ROG:~/Desktop/llvm/mycode/task8$ diff -u crc_32.ll crc32_opt.ll
+grep -n "ive.r" crc32_opt.ll
+--- crc_32.ll   2025-11-18 18:38:45.491237158 -0500
++++ crc32_opt.ll        2025-11-18 18:40:03.355662812 -0500
+@@ -1,4 +1,4 @@
+-; ModuleID = 'crc_32.c'
++; ModuleID = 'crc_32.ll'
+ source_filename = "crc_32.c"
+ target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
+ target triple = "x86_64-pc-linux-gnu"
+@@ -7,42 +7,35 @@
+
+ ; Function Attrs: noinline nounwind uwtable
+ define dso_local i64 @crc32pseudo() #0 {
+-  %1 = alloca i32, align 4
+-  %2 = alloca i64, align 8
+-  store i64 4294967295, i64* %2, align 8
+-  store i32 0, i32* %1, align 4
+-  br label %3
+-
+-3:                                                ; preds = %18, %0
+-  %4 = load i32, i32* %1, align 4
+-  %5 = icmp slt i32 %4, 1024
+-  br i1 %5, label %6, label %21
+-
+-6:                                                ; preds = %3
+-  %7 = load i64, i64* %2, align 8
+-  %8 = call i32 @rand_beebs()
+-  %9 = trunc i32 %8 to i8
+-  %10 = zext i8 %9 to i64
+-  %11 = xor i64 %7, %10
+-  %12 = and i64 %11, 255
+-  %13 = getelementptr inbounds [256 x i64], [256 x i64]* @crc_32_tab, i64 0, i64 %12
+-  %14 = load i64, i64* %13, align 8
+-  %15 = load i64, i64* %2, align 8
+-  %16 = lshr i64 %15, 8
+-  %17 = xor i64 %14, %16
+-  store i64 %17, i64* %2, align 8
+-  br label %18
+-
+-18:                                               ; preds = %6
+-  %19 = load i32, i32* %1, align 4
+-  %20 = add nsw i32 %19, 1
+-  store i32 %20, i32* %1, align 4
+-  br label %3, !llvm.loop !6
+-
+-21:                                               ; preds = %3
+-  %22 = load i64, i64* %2, align 8
+-  %23 = xor i64 %22, -1
+-  ret i64 %23
++  br label %1
++
++1:                                                ; preds = %13, %0
++  %.01 = phi i64 [ 4294967295, %0 ], [ %12, %13 ]
++  %.0 = phi i32 [ 0, %0 ], [ %ive.r, %13 ]
++  %ive.r = phi i32 [ 1, %0 ], [ %ive.inc, %13 ]
++  %2 = icmp slt i32 %.0, 1024
++  br i1 %2, label %3, label %14
++
++3:                                                ; preds = %1
++  %4 = call i32 @rand_beebs()
++  %5 = trunc i32 %4 to i8
++  %6 = zext i8 %5 to i64
++  %7 = xor i64 %.01, %6
++  %8 = and i64 %7, 255
++  %9 = getelementptr inbounds [256 x i64], [256 x i64]* @crc_32_tab, i64 0, i64 %8
++  %10 = load i64, i64* %9, align 8
++  %11 = lshr i64 %.01, 8
++  %12 = xor i64 %10, %11
++  br label %13
++
++13:                                               ; preds = %3
++  %ive.inc = add i32 %ive.r, 1
++  br label %1, !llvm.loop !6
++
++14:                                               ; preds = %1
++  %.01.lcssa = phi i64 [ %.01, %1 ]
++  %15 = xor i64 %.01.lcssa, -1
++  ret i64 %15
+ }
+
+ declare i32 @rand_beebs() #1
+@@ -54,47 +47,35 @@
+
+ ; Function Attrs: noinline nounwind uwtable
+ define dso_local void @warm_caches(i32 noundef %0) #0 {
+-  %2 = alloca i32, align 4
+-  %3 = alloca i32, align 4
+-  store i32 %0, i32* %2, align 4
+-  %4 = load i32, i32* %2, align 4
+-  %5 = call i32 @benchmark_body(i32 noundef %4)
+-  store i32 %5, i32* %3, align 4
++  %2 = call i32 @benchmark_body(i32 noundef %0)
+   ret void
+ }
+
+ ; Function Attrs: noinline nounwind uwtable
+ define internal i32 @benchmark_body(i32 noundef %0) #0 {
+-  %2 = alloca i32, align 4
+-  %3 = alloca i32, align 4
+-  %4 = alloca i64, align 8
+-  store i32 %0, i32* %2, align 4
+-  store i32 0, i32* %3, align 4
+-  br label %5
+-
+-5:                                                ; preds = %11, %1
+-  %6 = load i32, i32* %3, align 4
+-  %7 = load i32, i32* %2, align 4
+-  %8 = icmp slt i32 %6, %7
+-  br i1 %8, label %9, label %14
++  br label %2
++
++2:                                                ; preds = %6, %1
++  %.01 = phi i32 [ 0, %1 ], [ %ive.r, %6 ]
++  %.0 = phi i64 [ undef, %1 ], [ %5, %6 ]
++  %ive.r = phi i32 [ 1, %1 ], [ %ive.inc, %6 ]
++  %3 = icmp slt i32 %.01, %0
++  br i1 %3, label %4, label %7
+
+-9:                                                ; preds = %5
++4:                                                ; preds = %2
+   call void @srand_beebs(i32 noundef 0)
+-  %10 = call i64 @crc32pseudo()
+-  store i64 %10, i64* %4, align 8
+-  br label %11
+-
+-11:                                               ; preds = %9
+-  %12 = load i32, i32* %3, align 4
+-  %13 = add nsw i32 %12, 1
+-  store i32 %13, i32* %3, align 4
+-  br label %5, !llvm.loop !8
+-
+-14:                                               ; preds = %5
+-  %15 = load i64, i64* %4, align 8
+-  %16 = urem i64 %15, 32768
+-  %17 = trunc i64 %16 to i32
+-  ret i32 %17
++  %5 = call i64 @crc32pseudo()
++  br label %6
++
++6:                                                ; preds = %4
++  %ive.inc = add i32 %ive.r, 1
++  br label %2, !llvm.loop !8
++
++7:                                                ; preds = %2
++  %.0.lcssa = phi i64 [ %.0, %2 ]
++  %8 = urem i64 %.0.lcssa, 32768
++  %9 = trunc i64 %8 to i32
++  ret i32 %9
+ }
+
+ ; Function Attrs: noinline nounwind uwtable
+@@ -105,12 +86,9 @@
+
+ ; Function Attrs: noinline nounwind uwtable
+ define dso_local i32 @verify_benchmark(i32 noundef %0) #0 {
+-  %2 = alloca i32, align 4
+-  store i32 %0, i32* %2, align 4
+-  %3 = load i32, i32* %2, align 4
+-  %4 = icmp eq i32 11433, %3
+-  %5 = zext i1 %4 to i32
+-  ret i32 %5
++  %2 = icmp eq i32 11433, %0
++  %3 = zext i1 %2 to i32
++  ret i32 %3
+ }
+
+ declare void @srand_beebs(i32 noundef) #1
+14:  %.0 = phi i32 [ 0, %0 ], [ %ive.r, %13 ]
+15:  %ive.r = phi i32 [ 1, %0 ], [ %ive.inc, %13 ]
+32:  %ive.inc = add i32 %ive.r, 1
+59:  %.01 = phi i32 [ 0, %1 ], [ %ive.r, %6 ]
+61:  %ive.r = phi i32 [ 1, %1 ], [ %ive.inc, %6 ]
+71:  %ive.inc = add i32 %ive.r, 1
