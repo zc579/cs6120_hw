@@ -1,0 +1,486 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "x",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "dest": "two",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "args": [
+            "x",
+            "one"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "cmp1"
+          ],
+          "labels": [
+            "ret_false",
+            "cont1"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "cont1"
+        },
+        {
+          "args": [
+            "x",
+            "two"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "cmp2"
+          ],
+          "labels": [
+            "ret_true",
+            "cont2"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "cont2"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "label": "loop"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "cmp3"
+          ],
+          "labels": [
+            "check_prime",
+            "done"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "check_prime"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "cmp4"
+          ],
+          "labels": [
+            "ret_false",
+            "inc"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "inc"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loop"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "done"
+        },
+        {
+          "dest": "one_ret",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "one_ret"
+          ],
+          "op": "ret"
+        },
+        {
+          "label": "ret_false"
+        },
+        {
+          "dest": "zero_ret",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "zero_ret"
+          ],
+          "op": "ret"
+        },
+        {
+          "label": "ret_true"
+        },
+        {
+          "dest": "one_ret2",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "one_ret2"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "isprime",
+      "type": "int"
+    },
+    {
+      "args": [
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "dest": "two",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "dest": "max_factor",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "dest": "d",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "label": "outer_loop"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "cmp1"
+          ],
+          "labels": [
+            "check_div",
+            "ret_max"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "check_div"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "cmp2"
+          ],
+          "labels": [
+            "handle_div",
+            "inc_d"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "handle_div"
+        },
+        {
+          "args": [
+            "d"
+          ],
+          "dest": "p",
+          "funcs": [
+            "isprime"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "args": [
+            "p",
+            "one"
+          ],
+          "dest": "cmp_prime",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "cmp_prime"
+          ],
+          "labels": [
+            "update_max",
+            "div_done"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "update_max"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "d",
+            "zero"
+          ],
+          "dest": "max_factor",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "div_done"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "div_done"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q2",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q2",
+            "d"
+          ],
+          "dest": "prod2",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod2",
+            "n"
+          ],
+          "dest": "cmp3",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "cmp3"
+          ],
+          "labels": [
+            "divide_out",
+            "after_div"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "divide_out"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "n",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "div_done"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "after_div"
+        },
+        {
+          "labels": [
+            "inc_d"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "inc_d"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "outer_loop"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "ret_max"
+        },
+        {
+          "args": [
+            "max_factor"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "greatest_prime_factor",
+      "type": "int"
+    },
+    {
+      "args": [
+        {
+          "name": "input",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "args": [
+            "input"
+          ],
+          "dest": "res",
+          "funcs": [
+            "greatest_prime_factor"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "args": [
+            "res"
+          ],
+          "op": "print"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

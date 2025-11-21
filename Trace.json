@@ -1,0 +1,4245 @@
+{
+  "functions": [
+    {
+      "name": "main",
+      "args": [
+        {
+          "name": "input",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "dest": "two",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "dest": "max_factor",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "dest": "d",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "dest": "two",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "args": [
+            "x",
+            "one"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "two"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "dest": "one_ret",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "one_ret"
+          ],
+          "op": "ret"
+        },
+        {
+          "args": [
+            "p",
+            "one"
+          ],
+          "dest": "cmp_prime",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "d",
+            "zero"
+          ],
+          "dest": "max_factor",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q2",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q2",
+            "d"
+          ],
+          "dest": "prod2",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod2",
+            "n"
+          ],
+          "dest": "cmp3",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "n",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q2",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q2",
+            "d"
+          ],
+          "dest": "prod2",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod2",
+            "n"
+          ],
+          "dest": "cmp3",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "dest": "two",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "args": [
+            "x",
+            "one"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "two"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "dest": "one_ret",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "one_ret"
+          ],
+          "op": "ret"
+        },
+        {
+          "args": [
+            "p",
+            "one"
+          ],
+          "dest": "cmp_prime",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "d",
+            "zero"
+          ],
+          "dest": "max_factor",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q2",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q2",
+            "d"
+          ],
+          "dest": "prod2",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod2",
+            "n"
+          ],
+          "dest": "cmp3",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "n",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q2",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q2",
+            "d"
+          ],
+          "dest": "prod2",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod2",
+            "n"
+          ],
+          "dest": "cmp3",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "dest": "two",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "args": [
+            "x",
+            "one"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "two"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "dest": "one_ret",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "one_ret"
+          ],
+          "op": "ret"
+        },
+        {
+          "args": [
+            "p",
+            "one"
+          ],
+          "dest": "cmp_prime",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "d",
+            "zero"
+          ],
+          "dest": "max_factor",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q2",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q2",
+            "d"
+          ],
+          "dest": "prod2",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod2",
+            "n"
+          ],
+          "dest": "cmp3",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "n",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q2",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q2",
+            "d"
+          ],
+          "dest": "prod2",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod2",
+            "n"
+          ],
+          "dest": "cmp3",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "d"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod",
+            "n"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "dest": "two",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "args": [
+            "x",
+            "one"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "two"
+          ],
+          "dest": "cmp2",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 2
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "x",
+            "i"
+          ],
+          "dest": "q",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q",
+            "i"
+          ],
+          "dest": "prod",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "prod",
+            "x"
+          ],
+          "dest": "cmp4",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "i",
+            "x"
+          ],
+          "dest": "cmp3",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "dest": "one_ret",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "one_ret"
+          ],
+          "op": "ret"
+        },
+        {
+          "args": [
+            "p",
+            "one"
+          ],
+          "dest": "cmp_prime",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "dest": "zero",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "args": [
+            "d",
+            "zero"
+          ],
+          "dest": "max_factor",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q2",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q2",
+            "d"
+          ],
+          "dest": "prod2",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod2",
+            "n"
+          ],
+          "dest": "cmp3",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "n",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "n",
+            "d"
+          ],
+          "dest": "q2",
+          "op": "div",
+          "type": "int"
+        },
+        {
+          "args": [
+            "q2",
+            "d"
+          ],
+          "dest": "prod2",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "args": [
+            "prod2",
+            "n"
+          ],
+          "dest": "cmp3",
+          "op": "eq",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "d",
+            "one"
+          ],
+          "dest": "d",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "args": [
+            "d",
+            "n"
+          ],
+          "dest": "cmp1",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "max_factor"
+          ],
+          "op": "ret"
+        },
+        {
+          "args": [
+            "res"
+          ],
+          "op": "print"
+        },
+        {
+          "op": "ret"
+        }
+      ]
+    }
+  ]
+}
